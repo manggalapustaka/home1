@@ -620,26 +620,43 @@
                          </div>
                     </div>
                     <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-4">
-                         <h1 class="text-uppercase mb-4 font-weight-bold text-orange">contact me</h1>
-                         <div class="mb-3">
-                              <label for="exampleFormControlInput1" class="form-label ">Full Name
-                              </label>
-                              <input type="email" class="form-control" id="exampleFormControlInput1"
-                                   placeholder="your name">
-                         </div>
-                         <div class="mb-3">
-                              <label for="exampleFormControlInput1" class="form-label ">Email
-                                   address</label>
-                              <input type="email" class="form-control" id="exampleFormControlInput1"
-                                   placeholder="your email">
-                         </div>
-                         <div class="mb-3">
-                              <label for="exampleFormControlTextarea1" class="form-label">Massage
-                              </label>
-                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                         </div>
-                         <button class="btn header-btn " type="submit">Kirim</button>
+                         <div class="alert alert-success align-items-center alert-dismissible " role="
+                              alert" id="myAlert">
+                              Thanks your email submited
 
+                              <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                   aria-label="Close"></button>
+                         </div>
+
+                         <h1 class="text-uppercase mb-4 font-weight-bold text-warning">contact me</h1>
+                         <form action="https://formsubmit.co/7937f2533162208d79e89227166e58de" method="POST">
+                              <!-- HONEYPOT -->
+                              <input type="text" name="_honey" style="display:none">
+                              <!-- DISABLE CAPTCHA -->
+                              <input type="hidden" name="_captcha" value="false">
+
+                              <input type="hidden" name="_next"
+                                   value="https://manggalapustaka.github.io/home3/manggalp.html#kontak">
+                              <div class="mb-3">
+                                   <label for="fullname" class="form-label ">Full Name
+                                   </label>
+                                   <input name="name" class="form-control" id="fullname" placeholder="your name"
+                                        required>
+                              </div>
+                              <div class="mb-3">
+                                   <label for="emailinfo" class="form-label ">Email
+                                        address</label>
+                                   <input type="email" class="form-control" name="email" id="emailinfo"
+                                        placeholder="your email" required>
+                              </div>
+                              <div class="mb-3">
+                                   <label for="massage" class="form-label">Massage
+                                   </label>
+                                   <textarea class="form-control" id="massage" name="massage" rows="3"
+                                        required></textarea>
+                              </div>
+                              <button class="btn footer-btn" onclick="alertFunction()" type="submit">Send</button>
+                         </form>
                     </div>
 
 
@@ -731,6 +748,13 @@
                          }, 800);
                }
           });
+
+          var myAlert = document.getElementById('myAlert');
+          myAlert.style.display = 'none'
+
+          function alertFunction() {
+               myAlert.style.display = 'block'
+          }
 
      </script>
 </body>
